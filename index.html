@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>لیگ قهرمانان یو استارز</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p id="date">در حال بارگذاری تاریخ...</p>
+    <h1>لیگ قهرمانان یو استارز 🏆</h1>
+  </header>
+
+  <main>
+    <h2>جدول رده‌بندی</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>تیم</th>
+          <th>بازی</th>
+          <th>برد</th>
+          <th>مساوی</th>
+          <th>باخت</th>
+          <th>تفاضل</th>
+          <th>امتیاز</th>
+        </tr>
+      </thead>
+      <tbody id="standings"></tbody>
+    </table>
+    <h2>نتایج مسابقات</h2>
+    <div id="matches">هنوز مسابقه‌ای ثبت نشده است.</div>
+  </main>
+
+  <script>
+    document.getElementById('date').textContent =
+      new Intl.DateTimeFormat('fa-IR', {
+        dateStyle: 'full',
+        timeStyle: 'short',
+        timeZone: 'Asia/Tehran'
+      }).format(new Date());
+
+    const teams = ['گی‌مر', 'بزهای‌کوهی', 'بایرن‌مونیخ'];
+    document.getElementById('standings').innerHTML =
+      teams.map(team => `<tr><td>${team}</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>`).join('');
+  </script>
+</body>
+</html>
